@@ -1,5 +1,6 @@
+// To find all the primitive roots of the group G = <Zp*, *>
+
 import java.util.*;
-import java.lang.Math;
 
 public class prac4 {
     public static void main(String args[])
@@ -7,7 +8,7 @@ public class prac4 {
         List<Integer> elements = new ArrayList<Integer>();
         List<Integer> roots = new ArrayList<Integer>();
         Scanner scan = new Scanner(System.in);
-        
+
         System.out.print("\nEnter n:: ");
         int n = scan.nextInt();
         int gcd = 0, temp = 1, element = 0;

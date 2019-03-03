@@ -39,12 +39,9 @@ class infor
         while (end==0)
         {       
            //break loop when we reach end of both the arrays 
-            if( last1 == i)
+            if( last1 == i && last2 == j )
             {
-                if( last2 == j)
-                {
-                   end = 1;
-                }
+                end = 1;   
             }
             
            //add to temp array when same doc-id is found
