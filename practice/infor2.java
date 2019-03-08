@@ -1,7 +1,7 @@
 
 import java.util.*;
 
-class infor
+class infor2
 {
     public static void main(String args[])
     {
@@ -30,7 +30,7 @@ class infor
             System.out.print(" -> " + array2[i]);
         }
 
-        System.out.print("\n\n'Brutus AND Cleopatra' ");
+        System.out.print("\n\n'Brutus OR Cleopatra' ");
 
         int end = 0, i = 0, j =0;
         int last1 = array1.length - 1;
@@ -48,15 +48,23 @@ class infor
             {
                 temp.add(array1[i]);
                 System.out.print(" -> " + array1[i]);
-            }
-
-            if (array1[i] >= array2[j])
-            {
+                i++;
                 j++;
             }
-            else 
+            else
             {
-                i++;
+                if (array1[i] > array2[j])
+                {
+                    temp.add(array2[j]);
+                    System.out.print(" -> " + array2[j]);
+                    j++;
+                }
+                else 
+                {
+                    temp.add(array1[i]);
+                    System.out.print(" -> " + array1[i]);    
+                    i++;
+                }
             }
 
            //for ensuring array is in bound
