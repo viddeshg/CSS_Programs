@@ -23,6 +23,8 @@ class prac5_b
                 n = scan2.nextInt();
             }
         }
+
+        scan2.close();
         return n;
     }
 
@@ -119,5 +121,7 @@ class prac5_b
             }
             BigInteger message = result2.mod(BigInteger.valueOf(n));
             System.out.println("\nReceived message:: "+message+"\n");
+
+        scan.close();
     }
 }

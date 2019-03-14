@@ -100,5 +100,6 @@ class prac1
         }
         System.out.println("\n");
 
+        scan.close();
     }
 }

@@ -8,8 +8,6 @@
 
 **Practical 4:** Finding primitive roots of the group G = <Zp*, *>
 
-**Practical 5a:** To implement RSA Algorithm for providing confidentiality.
-
-**Practical 5b:** To implement RSA Algorithm for providing authentication.
+**Practical 5:** To implement RSA Algorithm for providing confidentiality and authentication.
 
 **Practical 6:** To implement Rabin Cryptosystem.

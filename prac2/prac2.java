@@ -154,6 +154,8 @@ class prac2
             System.out.print(plaintext.get(i+1) + " ");
         }
         System.out.print("\n");
+
+        scan.close();
     }
 
     static void encrypt()
@@ -377,6 +379,7 @@ class prac2
 
         decrypt();
 
+        scan.close();
     }
 }
 
