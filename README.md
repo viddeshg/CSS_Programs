@@ -11,3 +11,5 @@
 **Practical 5a:** To implement RSA Algorithm for providing confidentiality.
 
 **Practical 5b:** To implement RSA Algorithm for providing authentication.
+
+**Practical 6:** To implement Rabin Cryptosystem.

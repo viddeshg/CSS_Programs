@@ -58,7 +58,6 @@ class prac5_a
             temp = temp + 1;
         }
         System.out.print("\b)");
-
     }
        public static void main(String args[])
     {
@@ -121,6 +120,5 @@ class prac5_a
             }
             BigInteger message = result2.mod(BigInteger.valueOf(n));
             System.out.println("\nDecryped message:: "+message+"\n");
-
     }
 }

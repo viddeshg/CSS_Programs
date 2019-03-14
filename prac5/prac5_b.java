@@ -2,7 +2,6 @@
 
 import java.math.BigInteger;
 import java.util.*;
-
 class prac5_b
 {
 
