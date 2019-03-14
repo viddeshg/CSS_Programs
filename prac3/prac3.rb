@@ -110,7 +110,8 @@ else
     lower = secondpoly
 end
 
-# array 'xor' stores xor with the modulus
+# array 'xor' st
+ores xor with the modulus
 xor = Array.new(lowerPolyLength,"")
 xor.insert(0,"#{higher}")
 

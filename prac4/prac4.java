@@ -13,6 +13,20 @@ public class prac4 {
         int n = scan.nextInt();
         int gcd = 0, temp = 1, element = 0;
 
+        // checking prime or not
+        boolean prime = false;
+        while(prime == false)
+        {
+            if(n%6==1 || n%6==5 || n==2 || n==3)
+            {
+                prime = true;
+            }
+            else 
+            {
+                System.out.print("\nNumber is not prime. Enter again:: ");
+                n = scan.nextInt();
+            }
+        }
         while(temp!=n)
         {
             for(int i = 1; i <= n; i++)
