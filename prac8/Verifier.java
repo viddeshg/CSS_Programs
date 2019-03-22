@@ -68,7 +68,7 @@ public class Verifier
                     System.out.print("\nClaimant:: ");
                     line = inFromClaimant.readUTF();
                     x =  Integer.parseInt(line);
-                    System.out.print(x+" (commitment)");
+                    System.out.print(x+" (witness x)");
 
                     int count = 0;
                     while(count!=4)
@@ -105,8 +105,7 @@ public class Verifier
                             System.out.print("\nVerifier:: ");
                             out.writeUTF("Authenticated"); 
                             System.out.print("Claimant Verified.");
-                        }
-                        
+                        }      
                         count = count + 1;
                     }
                     break;
@@ -168,6 +167,7 @@ public class Verifier
 	public static void main(String args[]) 
 	{ 
         n = PublicKey();
+
         Verifier verifier = new Verifier(8043); 
 	} 
 } 

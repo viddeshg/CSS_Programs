@@ -122,7 +122,7 @@ public class Claimant
 				// sending x to the verifier
 				System.out.print("Claimant:: ");
 				out.writeUTF(Integer.toString(x)); 
-				System.out.print(x+" (sending commitment)");
+				System.out.print(x+" (sending witness x)");
 
 				int count = 0;
 				while(count!=4)
