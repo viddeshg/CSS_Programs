@@ -62,7 +62,7 @@ public class Verifier
                     System.out.print("\nClaimant:: ");
                     line = inFromClaimant.readUTF();
                     v =  Integer.parseInt(line);
-                    System.out.print(v+" (public key registraion)");
+                    System.out.print(v+" (public key registration)");
 
                     // input of witness from claimant
                     System.out.print("\nClaimant:: ");
@@ -100,7 +100,7 @@ public class Verifier
                     if(ySquare % n == (x * vPowerC) % n)
                     {
                         System.out.print("\nVerifier:: ");
-                        out.writeUTF("Autheticated"); 
+                        out.writeUTF("Authenticated"); 
                         System.out.print("Claimant Verified.");
                     }
 

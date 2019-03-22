@@ -1,8 +1,6 @@
 /* To implement Fiat-Shamir protocol for entity authentication 
    using a client server program where the client is the 
-   claimant and the server is the verifier.
-   
-*/
+   claimant and the server is the verifier. */
 
 // CLAIMANT SIDE
 
