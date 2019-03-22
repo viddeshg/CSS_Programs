@@ -11,3 +11,7 @@
 **Practical 5:** To implement RSA Algorithm for providing confidentiality and authentication.
 
 **Practical 6:** To implement Rabin Cryptosystem.
+
+**Practical 7:** To implement Diffie-Hellman Key exchange algorithm.
+
+**Practical 8:** To implement Fiat-Shamir protocol for entity authentication
