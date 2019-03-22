@@ -83,7 +83,7 @@ public class Claimant
 
 				// choosing a private key
 				int nMinusOne = n - 1;
-				System.out.print("\nChoose a number as private key.\n(");
+				System.out.print("\nChoose a number as private key. (s)\n(");
 				for(int i = 2; i < n; i++)
 				{
 					if (relativelyPrime(i, n))
@@ -108,7 +108,7 @@ public class Claimant
 				System.out.print(v+" (registering public key)");
 
 				// choose commitment 'r'
-				System.out.print("\nChoose a number as commitment (between 1 and "+nMinusOne+"):: " );
+				System.out.print("\nChoose a number as commitment (r) (between 1 and "+nMinusOne+"):: " );
 				r = scan.nextInt();
 
 				// calculating witness
@@ -124,28 +124,34 @@ public class Claimant
 				out.writeUTF(Integer.toString(x)); 
 				System.out.print(x+" (sending commitment)");
 
-				// input of challenge from verifier
-				System.out.print("\nVerifier:: ");
-				line = inFromVerifier.readUTF(); 
-				c = Integer.parseInt(line);
-				System.out.print(Integer.toString(c)+" (challenge)");
-
-				// sending response to verifier 'y = r*s^c'
-				System.out.print("\nClaimant:: ");
-				temp = 1;
-				for (int i = 1; i <=c; i++)
+				int count = 0;
+				while(count!=4)
 				{
-					temp = temp * s; // calculating exponent of s
-				}
-				y = (r * temp);
-				out.writeUTF(Integer.toString(y)); 
-				System.out.print(y+" (sending response)");
+					// input of challenge from verifier
+					System.out.print("\nVerifier:: ");
+					line = inFromVerifier.readUTF(); 
+					c = Integer.parseInt(line);
+					System.out.print(Integer.toString(c)+" (challenge)");
 
-				// waiting for verification
-				System.out.print("\nVerifier:: ");
-				line = inFromVerifier.readUTF(); 
-				System.out.print(line);				
-				System.out.print("\n\n");
+					// sending response to verifier 'y = r*s^c'
+					System.out.print("\nClaimant:: ");
+					temp = 1;
+					for (int i = 1; i <=c; i++)
+					{
+						temp = temp * s; // calculating exponent of s
+					}
+					y = (r * temp);
+					out.writeUTF(Integer.toString(y)); 
+					System.out.print(y+" (sending response)");
+
+					// waiting for verification
+					System.out.print("\nVerifier:: ");
+					line = inFromVerifier.readUTF(); 
+					System.out.print(line);				
+					System.out.print("\n");
+
+					count = count + 1;
+				}
 
 				break;
 			} 
@@ -170,7 +176,7 @@ public class Claimant
 
 	public static void main(String args[]) 
 	{ 
-		Claimant claimant = new Claimant("127.0.0.1", 8221); 
+		Claimant claimant = new Claimant("127.0.0.1", 8043); 
 	} 
 } 
 

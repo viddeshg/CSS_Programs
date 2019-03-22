@@ -70,40 +70,45 @@ public class Verifier
                     x =  Integer.parseInt(line);
                     System.out.print(x+" (commitment)");
 
-                    // sending challenge to claimant
-                    System.out.print("\nVerifier:: ");
-                    Random challenge = new Random();
-                    c = challenge.nextInt(2);
-                    out.writeUTF(Integer.toString(c)); 
-                    System.out.print(c+" (challenge)");
-
-
-                    // input of witness from claimant
-                    System.out.print("\nClaimant:: ");
-                    line = inFromClaimant.readUTF();
-                    y = Integer.parseInt(line);
-                    System.out.print(y+" (response to the challenge)");
-
-                    // calculating y^2 and x* (v^c)
-                    int ySquare = 1;
-                    for (int i = 1; i <= 2; i++)
+                    int count = 0;
+                    while(count!=4)
                     {
-                        ySquare = ySquare * y;
-                    }
-                    int vPowerC = 1;
-                    for (int i = 1; i <= c; i++)
-                    {
-                        vPowerC = vPowerC * v;
-                    }
+                        // sending challenge to claimant
+                        System.out.print("\n\nVerifier:: ");
+                        Random challenge = new Random();
+                        c = challenge.nextInt(2);
+                        out.writeUTF(Integer.toString(c)); 
+                        System.out.print(c+" (challenge)");
 
-                    // verifying claimant
-                    if(ySquare % n == (x * vPowerC) % n)
-                    {
-                        System.out.print("\nVerifier:: ");
-                        out.writeUTF("Authenticated"); 
-                        System.out.print("Claimant Verified.");
-                    }
 
+                        // input of witness from claimant
+                        System.out.print("\nClaimant:: ");
+                        line = inFromClaimant.readUTF();
+                        y = Integer.parseInt(line);
+                        System.out.print(y+" (response to the challenge)");
+
+                        // calculating y^2 and x* (v^c)
+                        int ySquare = 1;
+                        for (int i = 1; i <= 2; i++)
+                        {
+                            ySquare = ySquare * y;
+                        }
+                        int vPowerC = 1;
+                        for (int i = 1; i <= c; i++)
+                        {
+                            vPowerC = vPowerC * v;
+                        }
+
+                        // verifying claimant
+                        if(ySquare % n == (x * vPowerC) % n)
+                        {
+                            System.out.print("\nVerifier:: ");
+                            out.writeUTF("Authenticated"); 
+                            System.out.print("Claimant Verified.");
+                        }
+                        
+                        count = count + 1;
+                    }
                     break;
 				} 
 				catch(IOException i) 
@@ -163,7 +168,7 @@ public class Verifier
 	public static void main(String args[]) 
 	{ 
         n = PublicKey();
-        Verifier verifier = new Verifier(8221); 
+        Verifier verifier = new Verifier(8043); 
 	} 
 } 
 
